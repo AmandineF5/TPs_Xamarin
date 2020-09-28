@@ -6,11 +6,23 @@
              mc:Ignorable="d"
              x:Class="TP_Layouts.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+    <StackLayout Orientation="Vertical">
+        <StackLayout Orientation="Horizontal" Padding="25,10" BackgroundColor="#58B0F0">
+            <Label Text="Nouveau" TextColor="White" HorizontalOptions="StartAndExpand"
+           VerticalOptions="CenterAndExpand"/>
+            <Label Text="Accueil" TextColor="White" HorizontalOptions="CenterAndExpand"
+           VerticalOptions="CenterAndExpand"/>
+            <Label Text="Rechercher" TextColor="White" HorizontalOptions="EndAndExpand"
+           VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" >
+                <Label Text="Welcome" VerticalOptions="StartAndExpand" />
+                
+            </StackLayout>
+        </ScrollView>
+       
+        
     </StackLayout>
 
 </ContentPage>
