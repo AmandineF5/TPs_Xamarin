@@ -15,14 +15,71 @@
             <Label Text="Rechercher" TextColor="White" HorizontalOptions="EndAndExpand"
            VerticalOptions="CenterAndExpand"/>
         </StackLayout>
-        <ScrollView VerticalOptions="FillAndExpand">
-            <StackLayout Orientation="Vertical" >
-                <Label Text="Welcome" VerticalOptions="StartAndExpand" />
+        
+        <ScrollView VerticalOptions="FillAndExpand" >
+            
+            <StackLayout Orientation="Vertical" 
+                         VerticalOptions="FillAndExpand">
                 
+                <StackLayout VerticalOptions="Fill" 
+                             Orientation="Horizontal"
+                             Padding="10,0">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <BoxView BackgroundColor="Black" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"></BoxView>
+                        <Label Grid.Column="1" Grid.Row="0" Text="richard.pantoufle@yahoo.fr"/>
+                        <Label Grid.Column="1" Grid.Row="1" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"/>
+
+                    </Grid>
+                   
+                </StackLayout>
+                
+                <StackLayout  HorizontalOptions="FillAndExpand" 
+                              Orientation="Horizontal" 
+                              VerticalOptions="Fill"
+                              Padding="25,10">
+                        <Label Text="Répondre" 
+                               HorizontalOptions="StartAndExpand" 
+                               VerticalOptions="CenterAndExpand"/>
+                        <Label Text="Retweet"  
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"/>
+                        <Label Text="Favoris" HorizontalOptions="EndAndExpand"
+                               VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <StackLayout  HorizontalOptions="FillAndExpand" >
+                    <BoxView BackgroundColor="Gray" HeightRequest="2"></BoxView>    
+                </StackLayout>
+              
             </StackLayout>
         </ScrollView>
-       
-        
+
+        <StackLayout Orientation="Horizontal" HeightRequest="75" Padding="25,10" VerticalOptions="End">
+            <Label Text="Fil" TextColor="Gray" 
+                   HorizontalOptions="StartAndExpand" 
+                   VerticalTextAlignment="Center"
+           />
+            <Label Text="Notifications" TextColor="Gray" 
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+          />
+            <Label Text="Messages" TextColor="Gray" 
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+           />
+            <Label Text="Moi" TextColor="Gray" 
+                   HorizontalOptions="EndAndExpand"
+                   VerticalTextAlignment="Center"
+           />
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
