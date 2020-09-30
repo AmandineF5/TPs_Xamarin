@@ -25,7 +25,7 @@
                 <Label Text="Mémoriser mes informations" VerticalTextAlignment="Center"/>
             </StackLayout>
             <Button x:Name="connecter" Text="SE CONNECTER"/>
-            <Label x:Name="error"></Label>
+            <Label x:Name="error" TextColor="IndianRed"></Label>
         </StackLayout>
 
         <ScrollView VerticalOptions="FillAndExpand" >
