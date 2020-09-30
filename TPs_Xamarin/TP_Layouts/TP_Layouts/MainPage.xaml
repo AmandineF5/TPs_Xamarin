@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:views="clr-namespace:TP_Layouts"
              x:Class="TP_Layouts.MainPage">
 
     <StackLayout Orientation="Vertical">
@@ -16,7 +17,7 @@
            VerticalOptions="CenterAndExpand"/>
         </StackLayout>
 
-        <StackLayout IsVisible="True"   x:Name="connectionForm" Orientation="Vertical" Padding="25,10">
+        <StackLayout IsVisible="True" x:Name="connectionForm" Orientation="Vertical" Padding="25,10">
             <Label Text="Connexion à Twitter" HorizontalOptions="Center"/>
             <Entry x:Name="identifiant" Placeholder="Identifiant Twitter"/>
             <Entry x:Name="mdp" Placeholder="Mot de passe"/>
@@ -28,51 +29,11 @@
             <Label x:Name="error" TextColor="IndianRed"></Label>
         </StackLayout>
 
-        <ScrollView VerticalOptions="FillAndExpand" >
-
-            <StackLayout IsVisible="False" x:Name="tweets"  Orientation="Vertical" 
-                         VerticalOptions="FillAndExpand">
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout x:Name ="TweetsList" IsVisible="False">
                 
-                <StackLayout VerticalOptions="Fill" 
-                             Orientation="Horizontal"
-                             Padding="10,0">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="75"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="https://picsum.photos/50/50/?random" Aspect="AspectFit" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
-                        <Label Grid.Column="1" Grid.Row="0" Text="richard.pantoufle@yahoo.fr"/>
-                        <Label Grid.Column="1" Grid.Row="1" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"/>
-
-                    </Grid>
-                   
-                </StackLayout>
-                
-                <StackLayout  HorizontalOptions="FillAndExpand" 
-                              Orientation="Horizontal" 
-                              VerticalOptions="Fill"
-                              Padding="25,10">
-                    <ImageButton BackgroundColor="Transparent" BorderColor="Transparent" Source="reply.png" WidthRequest="25"
-                               HorizontalOptions="StartAndExpand" 
-                               VerticalOptions="CenterAndExpand"/>
-                    <ImageButton BackgroundColor="Transparent" BorderColor="Transparent" Source="retweet.png" WidthRequest="25"
-                               HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="CenterAndExpand"/>
-                    <ImageButton Source="favorite.png" WidthRequest="25"
-                               HorizontalOptions="EndAndExpand"
-                               VerticalOptions="CenterAndExpand"/>
-                </StackLayout>
-
-                <StackLayout  HorizontalOptions="FillAndExpand" >
-                    <BoxView BackgroundColor="Gray" HeightRequest="2"></BoxView>
-                </StackLayout>
-              
             </StackLayout>
+            
         </ScrollView>
 
         <StackLayout Orientation="Horizontal" HeightRequest="75" Padding="25,10" VerticalOptions="End">
