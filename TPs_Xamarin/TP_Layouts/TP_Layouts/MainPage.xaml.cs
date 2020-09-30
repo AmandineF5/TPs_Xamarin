@@ -38,7 +38,6 @@ namespace TP_Layouts
                 TweetView tv = new TweetView();
                 tv.LoadData(tweet);
                 tweetsList.Children.Add(tv);
-
             }
         }
 

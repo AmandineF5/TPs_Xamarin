@@ -20,7 +20,7 @@ namespace TP_Layouts
 
         public void LoadData (Tweet tweet)
         {
-            this.TweetInfos.Text = String.Format("{0} {1} {2} ", tweet.PseudoUtilisateur, tweet.DateCreation, this.TweetText);
+            this.TweetInfos.Text = String.Format("{0} {1}", tweet.PseudoUtilisateur, tweet.DateCreation);
             this.TweetText.Text = tweet.Texte;
             
         }
