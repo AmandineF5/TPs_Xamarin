@@ -15,6 +15,8 @@ namespace TP_Layouts
     public partial class MainPage : ContentPage
     {
         private bool isConnected = false;
+        private const string ERROR_IDENTIFIANT = "Veuillez entrer un identifiant d'au moins 3 charactères";
+        private const string ERROR_MDP = "Veuillez entrer un mot de passe d'au moins 6 charactères";
         public MainPage()
         {
             InitializeComponent();
@@ -29,26 +31,33 @@ namespace TP_Layouts
             this.error.Text = "";
             var identifiant = this.identifiant.Text;
             var mdp = this.mdp.Text;
+            StringBuilder errorSet = new StringBuilder();
 
-            if (identifiant == "" || identifiant == null || mdp == "" || mdp == null)
+            if (identifiant == "" || identifiant == null || identifiant.Length < 3)
             {
-                this.error.Text = "Veuillez entrer un identifiant et un mot de passe";
+                errorSet.Append(ERROR_IDENTIFIANT);
 
-            } else if (identifiant.Length < 3 && mdp.Length < 6)
-            {
-                this.error.Text = "Veuillez entrer un identifiant d'au moins 3 charactères et un mot de passe d'au moins 6 charactères";
-            } else if (identifiant.Length < 3)
-            {
-                this.error.Text = "Veuillez entrer un identifiant d'au moins 3 charactères";
+                if (mdp == "" || mdp == null || mdp.Length < 6)
+                {
+                    errorSet.Append("\n");
+                    errorSet.Append(ERROR_MDP);
+                } 
+            } 
 
-            } else if (mdp.Length < 6)
+            if (mdp == "" || mdp == null || mdp.Length < 6)
             {
-                this.error.Text = "Veuillez entrer un mot de passe d'au moins 6 charactères";
-            } else
+                if (identifiant != null)
+                {
+                    errorSet.Append(ERROR_MDP);
+                }
+                
+            } 
+
+            if (errorSet.Length == 0)
             {
                 this.isConnected = true;
             }
-
+            this.error.Text = errorSet.ToString();
             this.showHideContent(isConnected);
         }
 
