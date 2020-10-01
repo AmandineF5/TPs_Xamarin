@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:views="clr-namespace:TP_Layouts.Views.Menus"
-             x:Class="TP_Layouts.MainPage">
+             x:Class="TP_Layouts.MainPage"
+             NavigationPage.HasNavigationBar="False">
 
     <StackLayout Orientation="Vertical">
         
