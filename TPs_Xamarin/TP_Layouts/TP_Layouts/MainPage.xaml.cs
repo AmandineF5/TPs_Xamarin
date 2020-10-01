@@ -47,11 +47,12 @@ namespace TP_Layouts
             //TP4 (module 7)
             if (!String.IsNullOrEmpty(this.identifiant.Text) && !String.IsNullOrEmpty(this.mdp.Text))
             {
-                isConnected = this.ts.authenticate(this.identifiant.Text, this.mdp.Text);
+                isConnected = this.ts.Authenticate(this.identifiant.Text, this.mdp.Text);
 
                 if (isConnected)
                 {
                     Navigation.PushAsync(new TweetsListView());
+
                 } else
                 {
                     this.error.Text = ERROR_GENERAL_CONNECTION;

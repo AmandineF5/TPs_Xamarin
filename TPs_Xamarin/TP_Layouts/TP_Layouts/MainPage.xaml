@@ -11,8 +11,8 @@
         
         <views:MenuHaut/>
 
-        <StackLayout IsVisible="True" x:Name="connectionForm" Orientation="Vertical" Padding="25,10" VerticalOptions="FillAndExpand">
-            <Label Text="Connexion à Twitter" HorizontalOptions="Center"/>
+        <StackLayout IsVisible="True" x:Name="connectionForm" Orientation="Vertical" Padding="25,10" VerticalOptions="CenterAndExpand">
+            <Label Text="Connexion à Twitter" HorizontalOptions="Center" Font="Bold,20" TextColor="#58B0F0"/>
             <Entry x:Name="identifiant" Placeholder="Identifiant Twitter"/>
             <Entry x:Name="mdp" Placeholder="Mot de passe"/>
             <StackLayout Orientation="Horizontal">

@@ -7,7 +7,7 @@ namespace TP_Layouts.Services
 {
     public class TwitterService : ITwitterService
     {
-        public bool authenticate(string identifiant, string mdp)
+        public bool Authenticate(string identifiant, string mdp)
         {
             if (identifiant.Equals("croustis") && mdp.Equals("cacahuete"))
             {
@@ -16,7 +16,7 @@ namespace TP_Layouts.Services
             return false;
         }
 
-        public List<Tweet> getTweets()
+        public List<Tweet> GetTweets()
         {
             var tweets = new List<Tweet>();
             tweets.Add(new Tweet

@@ -22,7 +22,7 @@ namespace TP_Layouts.Views
             InitializeComponent();
 
             ts = new TwitterService();
-            List<Tweet> tweetsDB = ts.getTweets();
+            List<Tweet> tweetsDB = ts.GetTweets();
             tweetsObserver = new ObservableCollection<Tweet>();
 
             foreach (var tweet in tweetsDB)
