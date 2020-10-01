@@ -5,18 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:views="clr-namespace:TP_Layouts"
+             xmlns:views1="clr-namespace:TP_Layouts.Views.Menus"
              x:Class="TP_Layouts.MainPage">
 
     <StackLayout Orientation="Vertical">
-        <StackLayout Orientation="Horizontal" Padding="25,10" BackgroundColor="#58B0F0">
-            <ImageButton BackgroundColor="Transparent" BorderColor="Transparent" Source="pencil.png" WidthRequest="25" HorizontalOptions="StartAndExpand"
-           VerticalOptions="CenterAndExpand"/>
-            <Label Text="Accueil" TextColor="White" Font="Bold,20" HorizontalOptions="CenterAndExpand"
-           VerticalOptions="CenterAndExpand"/>
-            <ImageButton BackgroundColor="Transparent" BorderColor="Transparent" Source="search.png" WidthRequest="25" HorizontalOptions="EndAndExpand"
-           VerticalOptions="CenterAndExpand"/>
-        </StackLayout>
-
+        
+        <views1:MenuHaut />
+        
         <StackLayout IsVisible="True" x:Name="connectionForm" Orientation="Vertical" Padding="25,10">
             <Label Text="Connexion à Twitter" HorizontalOptions="Center"/>
             <Entry x:Name="identifiant" Placeholder="Identifiant Twitter"/>
@@ -35,25 +30,9 @@
             </StackLayout>
             
         </ScrollView>
-
-        <StackLayout Orientation="Horizontal" HeightRequest="75" Padding="25,10" VerticalOptions="End">
-            <Label Text="Fil" TextColor="Gray" 
-                   HorizontalOptions="StartAndExpand" 
-                   VerticalTextAlignment="Center"
-           />
-            <Label Text="Notifications" TextColor="Gray" 
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalTextAlignment="Center"
-          />
-            <Label Text="Messages" TextColor="Gray" 
-                   HorizontalOptions="CenterAndExpand"
-                   VerticalTextAlignment="Center"
-           />
-            <Label Text="Moi" TextColor="Gray" 
-                   HorizontalOptions="EndAndExpand"
-                   VerticalTextAlignment="Center"
-           />
-        </StackLayout>
+        
+        <views1:MenuBas />
+        
     </StackLayout>
 
 </ContentPage>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TP_Layouts.Views.Menus.MenuBas">
+  <ContentView.Content>
+        <StackLayout Orientation="Horizontal" HeightRequest="75" Padding="25,10" VerticalOptions="End">
+            <Label Text="Fil" TextColor="Gray" 
+                   HorizontalOptions="StartAndExpand" 
+                   VerticalTextAlignment="Center"
+           />
+            <Label Text="Notifications" TextColor="Gray" 
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+          />
+            <Label Text="Messages" TextColor="Gray" 
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalTextAlignment="Center"
+           />
+            <Label Text="Moi" TextColor="Gray" 
+                   HorizontalOptions="EndAndExpand"
+                   VerticalTextAlignment="Center"
+           />
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
