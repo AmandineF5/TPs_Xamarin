@@ -19,5 +19,15 @@ namespace TP_Layouts.Models
         public string NomUtilisateur { get => nomUtilisateur; set => nomUtilisateur = value; }
         public string IdentifiantUtilisateur { get => identifiantUtilisateur; set => identifiantUtilisateur = value; }
         public string PseudoUtilisateur { get => pseudoUtilisateur; set => pseudoUtilisateur = value; }
+
+        private string tweetInfos;
+
+        public string TweetInfos
+        {
+            get { return 
+                    String.Format("{0} {1}", this.PseudoUtilisateur, this.DateCreation); }
+            set { tweetInfos = value; }
+        }
+
     }
 }

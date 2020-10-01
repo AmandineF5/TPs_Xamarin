@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:TP_Layouts.Views.Menus"
+             x:Class="TP_Layouts.Views.TweetsListView">
+    <ContentPage.Content>
+        
+        <StackLayout>
+            
+            <views:MenuHaut/>
+
+            <Label Text="! Breaking Tweets !"
+                   Font="Bold,20" 
+                   TextColor="IndianRed" 
+                   VerticalTextAlignment="Center"
+                   HorizontalOptions="Center"
+                   Padding="10"/>
+            <!-- Place new controls here -->
+            <ListView x:Name="TweetsList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+
+                            <StackLayout  Orientation="Vertical" 
+                                          VerticalOptions="FillAndExpand"
+                                          >
+
+                                <StackLayout VerticalOptions="Fill" 
+                                    Orientation="Horizontal"
+                                    Padding="20">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="75"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="https://picsum.photos/50/50/?random" Aspect="AspectFit" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+                                        <Label Text="{Binding TweetInfos}" Grid.Column="1" Grid.Row="0"/>
+                                        <Label Text="{Binding Texte}" Grid.Column="1" Grid.Row="1"/>
+                                    </Grid>
+
+                                </StackLayout>
+
+                                <StackLayout  HorizontalOptions="FillAndExpand" 
+                                              Orientation="Horizontal" 
+                                              VerticalOptions="Fill"
+                                              Padding="25,10">
+                                    <ImageButton BackgroundColor="Transparent" BorderColor="Transparent" Source="reply.png" WidthRequest="25"
+                                                   HorizontalOptions="StartAndExpand" 
+                                                   VerticalOptions="CenterAndExpand"/>
+                                    <ImageButton BackgroundColor="Transparent" BorderColor="Transparent" Source="retweet.png" WidthRequest="25"
+                                                   HorizontalOptions="CenterAndExpand"
+                                                   VerticalOptions="CenterAndExpand"/>
+                                    <ImageButton Source="favorite.png" WidthRequest="25"
+                                                   HorizontalOptions="EndAndExpand"
+                                                   VerticalOptions="CenterAndExpand"/>
+                                </StackLayout>
+
+                                <StackLayout  HorizontalOptions="FillAndExpand" >
+                                    <BoxView BackgroundColor="Gray" HeightRequest="2" ></BoxView>
+                                </StackLayout>
+
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <views:MenuBas/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

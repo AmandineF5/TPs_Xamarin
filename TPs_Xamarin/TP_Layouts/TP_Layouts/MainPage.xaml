@@ -4,15 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             xmlns:views="clr-namespace:TP_Layouts"
-             xmlns:views1="clr-namespace:TP_Layouts.Views.Menus"
+             xmlns:views="clr-namespace:TP_Layouts.Views.Menus"
              x:Class="TP_Layouts.MainPage">
 
     <StackLayout Orientation="Vertical">
         
-        <views1:MenuHaut />
-        
-        <StackLayout IsVisible="True" x:Name="connectionForm" Orientation="Vertical" Padding="25,10">
+        <views:MenuHaut/>
+
+        <StackLayout IsVisible="True" x:Name="connectionForm" Orientation="Vertical" Padding="25,10" VerticalOptions="FillAndExpand">
             <Label Text="Connexion à Twitter" HorizontalOptions="Center"/>
             <Entry x:Name="identifiant" Placeholder="Identifiant Twitter"/>
             <Entry x:Name="mdp" Placeholder="Mot de passe"/>
@@ -24,14 +23,7 @@
             <Label x:Name="error" TextColor="IndianRed"></Label>
         </StackLayout>
 
-        <ScrollView VerticalOptions="FillAndExpand">
-            <StackLayout x:Name ="TweetsList" IsVisible="False">
-                
-            </StackLayout>
-            
-        </ScrollView>
-        
-        <views1:MenuBas />
+        <views:MenuBas VerticalOptions="End"/>
         
     </StackLayout>
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using TP_Layouts.Services;
 using Xamarin.Forms;
 using Xamarin.Essentials;
-
+using TP_Layouts.Views;
 
 namespace TP_Layouts
 {
@@ -37,20 +37,10 @@ namespace TP_Layouts
 
             this.ts = new TwitterService();
 
-            this.connecter.Clicked += connecter_Clicked;
-
-            this.loadTweets(this.TweetsList);
+            this.connecter.Clicked += connecter_Clicked;    
         }
 
-        private void loadTweets(StackLayout tweetsList)
-        {
-            foreach (var tweet in ts.getTweets())
-            {
-                TweetView tv = new TweetView();
-                tv.LoadData(tweet);
-                tweetsList.Children.Add(tv);
-            }
-        }
+        
 
         private void connecter_Clicked(object sender, EventArgs e)
         {
@@ -58,6 +48,14 @@ namespace TP_Layouts
             if (!String.IsNullOrEmpty(this.identifiant.Text) && !String.IsNullOrEmpty(this.mdp.Text))
             {
                 isConnected = this.ts.authenticate(this.identifiant.Text, this.mdp.Text);
+
+                if (isConnected)
+                {
+                    Navigation.PushAsync(new TweetsListView());
+                } else
+                {
+                    this.error.Text = ERROR_GENERAL_CONNECTION;
+                }
 
             } else
             {
@@ -96,21 +94,9 @@ namespace TP_Layouts
             //    this.isConnected = true;
             //}
             //this.error.Text = errorSet.ToString();
-            this.showHideContent(isConnected);
+            
         }
 
-      private void showHideContent (bool boo)
-        {
-            if (boo == false)
-            {
-                this.connectionForm.IsVisible = true;
-                this.TweetsList.IsVisible = false;
-            }
-            else if (boo == true)
-            {
-                this.connectionForm.IsVisible = false;
-                this.TweetsList.IsVisible = true;
-            }
-        }
+      
     }
 }

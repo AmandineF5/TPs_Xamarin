@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -16,7 +16,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="TweetView.xaml">
+    <Compile Update="Views\Menus\MenuBas.xaml.cs">
+      <DependentUpon>MenuBas.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Menus\MenuHaut.xaml.cs">
+      <DependentUpon>MenuHaut.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TweetsListView.xaml.cs">
+      <DependentUpon>TweetsListView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\TweetView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Menus\MenuBas.xaml">
@@ -25,5 +37,17 @@
     <EmbeddedResource Update="Views\Menus\MenuHaut.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\TweetsListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Views\Menus\MenuBas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Menus\MenuHaut.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 </Project>

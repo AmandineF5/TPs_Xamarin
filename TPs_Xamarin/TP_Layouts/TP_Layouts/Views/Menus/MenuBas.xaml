@@ -5,8 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TP_Layouts.Views.Menus.MenuBas">
-  <ContentView.Content>
-        <StackLayout Orientation="Horizontal" HeightRequest="75" Padding="25,10" VerticalOptions="End">
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" HeightRequest="75" Padding="25,10" >
             <Label Text="Fil" TextColor="Gray" 
                    HorizontalOptions="StartAndExpand" 
                    VerticalTextAlignment="Center"
