@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using TP_Layouts.Services;
 using Xamarin.Forms;
+using Xamarin.Essentials;
+
 
 namespace TP_Layouts
 {
@@ -19,11 +21,20 @@ namespace TP_Layouts
         private const string ERROR_IDENTIFIANT = "Veuillez entrer un identifiant d'au moins 3 charactères";
         private const string ERROR_MDP = "Veuillez entrer un mot de passe d'au moins 6 charactères";
         private const string ERROR_GENERAL_CONNECTION = "Identifiant ou mot de passe incorrect";
+        private const string ERROR_INTERNET_STATUS = "Veuillez vous connecter à internet";
 
         private TwitterService ts; 
         public MainPage()
         {
             InitializeComponent();
+
+            var current = Connectivity.NetworkAccess;
+
+            if (current != NetworkAccess.Internet)
+            {
+                this.error.Text = ERROR_INTERNET_STATUS;
+            }
+
             this.ts = new TwitterService();
 
             this.connecter.Clicked += connecter_Clicked;
